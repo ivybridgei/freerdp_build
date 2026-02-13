@@ -47,75 +47,109 @@ openssl 也是编译需要使用的库。
 OPENSSL_INCLUDE_DIR = D:\Program Files\OpenSSL-Win64\include
 OPENSSL_ROOT_DIR    = D:\Program Files\OpenSSL-Win64
 ```
-2.5. FreeRDP 源码
+
+### 2.5. FreeRDP 源码
 下载 FreeRDP 最新版本的源码。
-下载地址：https://github.com/FreeRDP/FreeRDP
-3. 编译 zlib 库
+*   下载地址：[https://github.com/FreeRDP/FreeRDP](https://github.com/FreeRDP/FreeRDP)
+
+## 3. 编译 zlib 库
+
 因为最新的 FreeRDP 把 zlib 库当做必选项，所以我们需要 zlib 库的头文件和库文件。我们需要先编译一下 zlib 库。
-3.1. zlib 库下载
-下载地址：https://github.com/madler/zlib/releases (使用最新的 zlib 1.3 版本)
-![alt text](images/o_230908123950_3.1-zlib库下载.png)
-3.2. 编译 zlib 库
+
+### 3.1. zlib 库下载
+*   下载地址：[https://github.com/madler/zlib/releases](https://github.com/madler/zlib/releases) (使用最新的 zlib 1.3 版本)
+
+![](images/o_230908123950_3.1-zlib库下载.png)
+
+### 3.2. 编译 zlib 库
 采用 CMake 生成 VS 工程文件。
-配置源代码路径和 build 路径。
-![alt text](images/o_230908123950_3.2-zlib编译.png)
-点击 Configure 按钮，开始生成配置。
-![alt text](images/o_230908123950_3.2-zlib编译1.png)
-点击 Generate 生成工程文件，然后点击 Open Project 打开工程文件。
-![alt text](images/o_230908123950_3.2-zlib_generate.png)
-3.3. 安装 zlib 库
-点击 Open Project 后，会自动打开 VS2019，找到 INSTALL 项目。
-右键选择：设为启动项目。
-![alt text](images/o_230908123950_3.3.-zlib_vs编译1.png)
-右键点击 生成。
-![alt text](images/o_230908123950_3.3-zlib_vs生成.png)
-生成成功详情：
-![alt text](images/o_230908123950_3.3-zlib_vs生成详情.png)
-注：目前是生成在 C:\Program Files\zlib\ 路径下，如果是其他路径，则可能需要加入到环境变量中，视具体情况而定。
-4. 使用 CMake 生成 FreeRDP 的 VS 解决方案
-4.1. 配置源码和 build 路径
+
+1.  配置源代码路径和 build 路径。
+    ![](images/o_230908123950_3.2-zlib编译.png)
+
+2.  点击 **Configure** 按钮，开始生成配置。
+    ![](images/o_230908123950_3.2-zlib编译1.png)
+
+3.  点击 **Generate** 生成工程文件，然后点击 **Open Project** 打开工程文件。
+    ![](images/o_230908123950_3.2-zlib_generate.png)
+
+### 3.3. 安装 zlib 库
+点击 Open Project 后，会自动打开 VS2019，找到 `INSTALL` 项目。
+
+1.  右键选择：**设为启动项目**。
+    ![](images/o_230908123950_3.3.-zlib_vs编译1.png)
+
+2.  右键点击 **生成**。
+    ![](images/o_230908123950_3.3-zlib_vs生成.png)
+
+3.  生成成功详情：
+    ![](images/o_230908123950_3.3-zlib_vs生成详情.png)
+
+*注：目前是生成在 `C:\Program Files\zlib\` 路径下，如果是其他路径，则可能需要加入到环境变量中，视具体情况而定。*
+
+## 4. 使用 CMake 生成 FreeRDP 的 VS 解决方案
+
+### 4.1. 配置源码和 build 路径
 打开 CMake 软件，配置 FreeRDP 源码和 build 路径。
-Source code: 本地源码路径
-Build binaries: 源码路径下的 build 目录
-![alt text](images/o_230908124020_4.1-cmake创建.png)
-点击 Configure 按钮，开始生成配置：
-![alt text](images/o_230908124020_4.1-cmake第一次配置.png)
-4.2. 配置 LIBUSB 路径
-把下载的 libusb-1.0.24 拷贝到 FreeRDP 目录下（其中 include 目录和 VS2019 是我们要用到的目录）。
-![alt text](images/o_230908124020_4.2-libusb目录.png)
-在 CMake 中搜索 LIBUSB，找到对应的选项进行配置。
-![alt text](images/o_230908124020_4.2-cmake_libusb配置.png)
-配置完成后的值：
-![alt text](images/o_230908124020_4.2-cmake_libusb配置完成.png)
-4.3. 处理配置错误
-4.3.1. zlib 库找不到错误
+*   Source code: 本地源码路径
+*   Build binaries: 源码路径下的 build 目录
+
+![](images/o_230908124020_4.1-cmake创建.png)
+
+点击 **Configure** 按钮，开始生成配置：
+![](images/o_230908124020_4.1-cmake第一次配置.png)
+
+### 4.2. 配置 LIBUSB 路径
+1.  把下载的 `libusb-1.0.24` 拷贝到 FreeRDP 目录下（其中 include 目录和 VS2019 是我们要用到的目录）。
+    ![](images/o_230908124020_4.2-libusb目录.png)
+
+2.  在 CMake 中搜索 `LIBUSB`，找到对应的选项进行配置。
+    ![](images/o_230908124020_4.2-cmake_libusb配置.png)
+
+3.  配置完成后的值：
+    ![](images/o_230908124020_4.2-cmake_libusb配置完成.png)
+
+### 4.3. 处理配置错误
+
+#### 4.3.1. zlib 库找不到错误
 第一次生成配置可能会报错，按照第三章步骤生成 zlib 库后，重新 Configure 即可消除该错误。
-![alt text](images/o_230908124020_4.3.1-cmake_zlib配置错误1.png)
-4.3.2. openssl 库未配置环境变量错误
+![](images/o_230908124020_4.3.1-cmake_zlib配置错误1.png)
+
+#### 4.3.2. openssl 库未配置环境变量错误
 如果出现如下错误，请检查 2.4 节中的环境变量是否配置正确。配置好后需重启 CMake 以加载环境变量。
-![alt text](images/o_230908124020_4.3.2-cmake_openssl错误.png)
-4.3.3. 去掉不需要的模块
+![](images/o_230908124020_4.3.2-cmake_openssl错误.png)
+
+#### 4.3.3. 去掉不需要的模块
 如果出现 FFmpeg 找不到的错误，由于我们用不到 FFmpeg 模块，可以在编译选项中去掉。
-![alt text](images/o_230908124021_4.3.3-cmake_ffmpeg错误.png)
-搜索 WITH_FFMPEG，去掉勾选。
-![alt text](images/o_230908124020_4.3.3-cmake_with_ffmpeg.png)
-类似的模块还有 WITH_SWSCALE、WITH_AAD 等，如果报错均可去掉勾选。WITH_CLIENT_SDL 可以保留。去掉模块后再次点击 Configure。
-4.4. 生成工程文件
-Configure 无误后，点击 Generate，然后点击 Open Project。
-![alt text](images/o_230908124054_4.4-cmake_generate.png)
-4.5. 配置工程文件
-打开 VS 工程后，需要在 wfreerdp-client (或 freerdp-client) 项目中添加对 libusb 的依赖。
-在 Client -> Common 下找到 freerdp-client 项目。
-右键选择属性 -> 链接器 -> 输入 -> 附加依赖项。
-增加 libusb-1.0.lib 的路径配置（可以使用绝对路径或相对路径）。
-![alt text](images/o_230908124055_4.5-freerdp-vsproject-配置1.png)
+![](images/o_230908124021_4.3.3-cmake_ffmpeg错误.png)
 
-![alt text](images/o_230908124055_4.5-freerdp-vsproject-配置2.png)
+搜索 `WITH_FFMPEG`，**去掉勾选**。
+![](images/o_230908124020_4.3.3-cmake_with_ffmpeg.png)
 
-![alt text](images/o_230908124054_4.5-freerdp-vsproject-配置3.png)
-4.6. 编译 & 运行程序
-找到 wfreerdp-client 项目，右键选择 生成。
-在 build\Debug 目录下会生成 wfreerdp.exe。如果运行需要，请将 libusb-1.0.dll 和 zlibd.dll 拷贝到 Debug 目录下。
-![alt text](images/o_230908124054_4.6-freerdp-vsproject-生成.png)
-5. 结语
+类似的模块还有 `WITH_SWSCALE`、`WITH_AAD` 等，如果报错均可去掉勾选。`WITH_CLIENT_SDL` 可以保留。去掉模块后再次点击 Configure。
+
+### 4.4. 生成工程文件
+Configure 无误后，点击 **Generate**，然后点击 **Open Project**。
+![](images/o_230908124054_4.4-cmake_generate.png)
+
+### 4.5. 配置工程文件
+打开 VS 工程后，需要在 `wfreerdp-client` (或 `freerdp-client`) 项目中添加对 libusb 的依赖。
+
+1.  在 `Client -> Common` 下找到 `freerdp-client` 项目。
+2.  右键选择属性 -> 链接器 -> 输入 -> **附加依赖项**。
+3.  增加 `libusb-1.0.lib` 的路径配置（可以使用绝对路径或相对路径）。
+
+![](images/o_230908124055_4.5-freerdp-vsproject-配置1.png)
+![](images/o_230908124055_4.5-freerdp-vsproject-配置2.png)
+![](images/o_230908124054_4.5-freerdp-vsproject-配置3.png)
+
+### 4.6. 编译 & 运行程序
+找到 `wfreerdp-client` 项目，右键选择 **生成**。
+
+在 `build\Debug` 目录下会生成 `wfreerdp.exe`。如果运行需要，请将 `libusb-1.0.dll` 和 `zlibd.dll` 拷贝到 Debug 目录下。
+
+![](images/o_230908124054_4.6-freerdp-vsproject-生成.png)
+
+## 5. 结语
 以上就是 Windows 下编译 FreeRDP 的步骤。
+```
