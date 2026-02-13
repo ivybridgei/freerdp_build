@@ -54,6 +54,8 @@ Before compiling, open `wf_client.c`, locate the `wf_automation_thread` function
 // Find this inside wf_client.c
 // Modify 'command' to your desired path or command
 const char* command = "Z:\\Debug\\QueryProxy.exe";
+```
+
 4. Build
 Use CMake to generate the Visual Studio project and build the wfreerdp target.
 5. Run
