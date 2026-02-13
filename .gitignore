@@ -1,0 +1,14 @@
+# Visual Studio 临时文件
+.vs/
+build/
+ipch/
+*.ipch
+*.db
+*.sdf
+*.opensdf
+
+# 编译输出
+bin/
+obj/
+Debug/
+Release/
