@@ -56,19 +56,27 @@ Before compiling, open `wf_client.c`, locate the `wf_automation_thread` function
 const char* command = "Z:\\Debug\\QueryProxy.exe";
 ```
 
-4. Build
-Use CMake to generate the Visual Studio project and build the wfreerdp target.
-5. Run
-The compiled wfreerdp.exe supports all original command-line arguments.
-code
-Bash
+### 4. Build
+Use CMake to generate the Visual Studio project and build the `wfreerdp` target.
+
+### 5. Run
+The compiled `wfreerdp.exe` supports all original command-line arguments.
+
+```bash
 wfreerdp.exe /v:192.168.1.100 /u:admin /p:password
-Upon running, no window will appear, but the remote machine will receive the input automatically.
-⚠️ Disclaimer
-This project is intended for security research, protocol analysis, and authorized automated operations only.
-Do not use this tool for unauthorized access or malicious attacks.
-The author assumes no responsibility for any legal consequences or system damage caused by the use of this project.
-This project is open-sourced under the Apache 2.0 License (following FreeRDP).
-🔗 References
-FreeRDP GitHub Repository
-Microsoft RDP Protocol Specification
+```
+
+*Upon running, no window will appear, but the remote machine will receive the input automatically.*
+
+## ⚠️ Disclaimer
+
+This project is intended for **security research, protocol analysis, and authorized automated operations** only.
+
+*   Do not use this tool for unauthorized access or malicious attacks.
+*   The author assumes no responsibility for any legal consequences or system damage caused by the use of this project.
+*   This project is open-sourced under the Apache 2.0 License (following FreeRDP).
+
+## 🔗 References
+
+*   [FreeRDP GitHub Repository](https://github.com/FreeRDP/FreeRDP)
+*   [Microsoft RDP Protocol Specification](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rdpbcgr/5073f4ed-1e93-45e1-b039-6e30c385867c)
