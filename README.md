@@ -40,7 +40,8 @@ To achieve "headless" operation, window creation and rendering logic were refact
 ## 🛠️ Usage & Compilation
 
 ### 1. Prerequisites
-Download the full FreeRDP source code and set up the compilation environment for Windows (Visual Studio / CMake).
+You need the FreeRDP source code and a Windows build environment.
+*   👉 **[Detailed Windows Compilation Guide](BUILD_WINDOWS.md)** (Mirrored from external source)
 
 ### 2. Replace Source File
 Replace the original `wf_client.c` in the FreeRDP source tree with the one provided in this repository.
