@@ -50,23 +50,33 @@
 ### 3. 配置 Payload (重要)
 在编译前，请打开 `wf_client.c`，找到 `wf_automation_thread` 函数，修改你要执行的远程命令：
 
-
+```c
 // 在 wf_client.c 中找到此处
 // 修改 command 变量为你想要在远程机器上自动输入的路径或命令
 const char* command = "Z:\\Debug\\QueryProxy.exe";
-4. 编译
-使用 CMake 生成 Visual Studio 工程并编译 wfreerdp 目标。
-5. 运行
-编译生成的 wfreerdp.exe 支持原版所有命令行参数。
-code
-Bash
+```
+
+### 4. 编译
+使用 CMake 生成 Visual Studio 工程并编译 `wfreerdp` 目标。
+
+### 5. 运行
+编译生成的 `wfreerdp.exe` 支持原版所有命令行参数。
+
+```bash
 wfreerdp.exe /v:192.168.1.100 /u:admin /p:password
-运行后，你将看不到任何窗口，但远程机器会自动接收到按键输入。
-⚠️ 免责声明 (Disclaimer)
-本项目仅供安全研究、协议分析及授权的自动化运维测试使用。
-请勿将此工具用于未经授权的系统访问或攻击行为。
-作者不对使用本项目造成的任何法律后果或系统损坏承担责任。
-本项目基于 Apache 2.0 协议开源（遵循 FreeRDP 原协议）。
-🔗 参考资料
-FreeRDP GitHub Repository
-Microsoft RDP Protocol Specification
+```
+
+*运行后，你将看不到任何窗口，但远程机器会自动接收到按键输入。*
+
+## ⚠️ 免责声明 (Disclaimer)
+
+本项目仅供**安全研究、协议分析及授权的自动化运维测试**使用。
+
+*   请勿将此工具用于未经授权的系统访问或攻击行为。
+*   作者不对使用本项目造成的任何法律后果或系统损坏承担责任。
+*   本项目基于 Apache 2.0 协议开源（遵循 FreeRDP 原协议）。
+
+## 🔗 参考资料
+
+*   [FreeRDP GitHub Repository](https://github.com/FreeRDP/FreeRDP)
+*   [Microsoft RDP Protocol Specification](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rdpbcgr/5073f4ed-1e93-45e1-b039-6e30c385867c)
