@@ -152,4 +152,5 @@ Configure 无误后，点击 **Generate**，然后点击 **Open Project**。
 
 ## 5. 结语
 以上就是 Windows 下编译 FreeRDP 的步骤。
-```
+
+
