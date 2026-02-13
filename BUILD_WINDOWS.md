@@ -43,9 +43,10 @@ openssl 也是编译需要使用的库。
 
 安装后，需要在环境变量中新增系统变量（以本地配置为例）：
 
-
+```cmd
 OPENSSL_INCLUDE_DIR = D:\Program Files\OpenSSL-Win64\include
 OPENSSL_ROOT_DIR    = D:\Program Files\OpenSSL-Win64
+```
 2.5. FreeRDP 源码
 下载 FreeRDP 最新版本的源码。
 下载地址：https://github.com/FreeRDP/FreeRDP
