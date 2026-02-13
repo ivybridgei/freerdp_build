@@ -40,7 +40,8 @@
 ## 🛠️ 使用与编译指南
 
 ### 1. 准备环境
-你需要先下载完整的 FreeRDP 源码，并配置好 Windows 下的编译环境（Visual Studio / CMake）。
+你需要下载 FreeRDP 源码并配置 Windows 编译环境。
+*   👉 **[详细的 Windows 编译教程请点击这里](BUILD_WINDOWS.md)** (转载自外部博客)
 
 ### 2. 替换源码
 将本项目中的 `wf_client.c` 替换 FreeRDP 源码目录下的对应文件：
@@ -49,7 +50,7 @@
 ### 3. 配置 Payload (重要)
 在编译前，请打开 `wf_client.c`，找到 `wf_automation_thread` 函数，修改你要执行的远程命令：
 
-```c
+
 // 在 wf_client.c 中找到此处
 // 修改 command 变量为你想要在远程机器上自动输入的路径或命令
 const char* command = "Z:\\Debug\\QueryProxy.exe";
